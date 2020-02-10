@@ -1,7 +1,8 @@
 const app = require("./app");
 const config = require("../database/knexfile");
+const knex = require("knex");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const db = knex({
   client: "pg",
@@ -9,19 +10,19 @@ const db = knex({
   searchPath: "public"
 });
 
-(async () => {
-  try {
-    console.log("Running migrations");
-    await db.migrate.latest().then(function() {
-      return db.seed.run("./data");
-    });
+// (async () => {
+//   try {
+//     console.log("Running migrations");
+//     await db.migrate.latest().then(function() {
+//       return db.seed.run("./data");
+//     });
 
-    console.log("Starting express");
-    app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
-  } catch (err) {
-    console.error("Error starting app!", err);
-    process.exit(-1);
-  }
-})();
+//     console.log("Starting express");
+//     app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+//   } catch (err) {
+//     console.error("Error starting app!", err);
+//     process.exit(-1);
+//   }
+// })();
 
 module.exports = db;
