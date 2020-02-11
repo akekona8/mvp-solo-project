@@ -18,12 +18,19 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+<<<<<<< HEAD
     "core-js": "^3.6.4",
     "express": "^4.17.1",
     "knex": "^0.20.9",
     "morgan": "^1.9.1",
     "pg": "^7.18.1",
     "postgres": "^1.0.2",
+=======
+    "express": "^4.17.1",
+    "knex": "^0.20.9",
+    "pg": "^7.18.1",
+    "core-js": "^3.6.4",
+>>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
     "vue": "^2.6.11",
     "vue2-google-maps": "^0.10.7",
     "vuex": "^3.1.2"
@@ -33,6 +40,7 @@
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
     "babel-eslint": "^10.0.3",
+<<<<<<< HEAD
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.7.2",
@@ -40,6 +48,15 @@
     "express-generator": "^4.16.1",
     "nodemon": "^2.0.2",
     "vue-template-compiler": "^2.6.11"
+=======
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "concurrently": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "express-generator": "^4.16.1",
+    "nodemon": "^2.0.2"
+>>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
   },
   "eslintConfig": {
     "root": true,

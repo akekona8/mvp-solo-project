@@ -1,7 +1,10 @@
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
+<<<<<<< HEAD
 const morgan = require("morgan");
+=======
+>>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
 
 const app = express();
 
@@ -18,8 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve static assets
+<<<<<<< HEAD
 // app.use(express.static(path.resolve(__dirname, "..", "dist")));
 app.use(express.static(path.join(__dirname, "public")));
+=======
+app.use(express.static(path.resolve(__dirname, "..", "dist")));
+// app.use(express.static(path.join(__dirname, "public")));
+>>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -27,7 +35,11 @@ app.use(function(req, res, next) {
 });
 
 // error handler
+<<<<<<< HEAD
 app.use(function(err, req, res) {
+=======
+app.use(function(err, req, res, next) {
+>>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
