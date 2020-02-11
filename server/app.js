@@ -1,10 +1,8 @@
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
-<<<<<<< HEAD
 const morgan = require("morgan");
-=======
->>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
+const db = require("./index.js");
 
 const app = express();
 
@@ -21,13 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve static assets
-<<<<<<< HEAD
 // app.use(express.static(path.resolve(__dirname, "..", "dist")));
 app.use(express.static(path.join(__dirname, "public")));
-=======
-app.use(express.static(path.resolve(__dirname, "..", "dist")));
-// app.use(express.static(path.join(__dirname, "public")));
->>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -35,11 +28,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-<<<<<<< HEAD
 app.use(function(err, req, res) {
-=======
-app.use(function(err, req, res, next) {
->>>>>>> b3f658939936fa4de9a20dc4799d25aef54ca4dc
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -47,6 +36,21 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
+});
+
+app.get("/api/travelog", async (req, res) => {
+  try {
+    const travelog = await db.select().table("travelog");
+    res.json(travelog);
+    res.sendStatus(200);
+  } catch (err) {
+    console.error("Error loading travelog", err);
+    res.sendStatus(500);
+  }
 });
 
 module.exports = app;

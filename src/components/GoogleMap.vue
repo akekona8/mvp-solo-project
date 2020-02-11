@@ -1,5 +1,3 @@
-// https://alligator.io/vuejs/vue-google-maps/
-
 <template>
   <div>
     <div>
@@ -10,7 +8,12 @@
       <br />
     </div>
     <br />
-    <gmap-map class="map" :center="center" :zoom="12" style="width:80%;  height: 350px;">
+    <gmap-map
+      class="map"
+      :center="center"
+      :zoom="12"
+      style="width:80%;  height: 350px;"
+    >
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
