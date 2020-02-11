@@ -3,20 +3,14 @@
 <template>
   <div>
     <div>
-      <h2>My stops around the world</h2>
       <label>
-        <gmap-autocomplete @place_changed="setPlace"> </gmap-autocomplete>
-        <button class="button-add-pin" @click="addMarker">Search</button>
+        <gmap-autocomplete @place_changed="setPlace"></gmap-autocomplete>
+        <button class="button-add-pin" @click="addMarker">Add</button>
       </label>
       <br />
     </div>
     <br />
-    <gmap-map
-      class="map"
-      :center="center"
-      :zoom="12"
-      style="width:80%;  height: 350px;"
-    >
+    <gmap-map class="map" :center="center" :zoom="12" style="width:80%;  height: 350px;">
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -76,5 +70,6 @@ export default {
 
 <style>
 .button-add-pin {
+  margin-left: 5px;
 }
 </style>

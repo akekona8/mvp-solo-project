@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Travelog</h1>
     <google-map />
   </div>
 </template>

@@ -5,7 +5,13 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    locations: []
+  },
+  mutations: {
+    setLocations(state, locations) {
+      state.locations = locations;
+    }
+  },
   actions: {}
 });
