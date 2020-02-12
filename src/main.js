@@ -1,9 +1,17 @@
 import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
 import App from "./App.vue";
 import * as VueGoogleMaps from "vue2-google-maps";
 import store from "./store";
+import axios from "axios";
+import VueAxios from "vue-axios";
+
+import "./assets/style.scss";
 
 Vue.config.productionTip = false;
+
+Vue.use(BootstrapVue);
+Vue.use(VueAxios, axios);
 
 Vue.use(VueGoogleMaps, {
   load: {

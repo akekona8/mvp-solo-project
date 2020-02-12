@@ -10,7 +10,9 @@ exports.seed = function(knex) {
           city: "Venice",
           favorite_memory: "Family gondola ride!",
           people: null,
-          photo_url: null
+          photo_url: null,
+          latitude: 45.44,
+          longitude: 12.31
         }
       ]);
     });

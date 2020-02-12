@@ -8,9 +8,11 @@ exports.up = function(knex) {
     t.text("favorite_memory");
     t.text("people");
     t.text("photo_url");
+    t.float("latitude");
+    t.float("longitude");
   });
 };
 
 exports.down = function(knex) {
-  knex.schema.dropTable("travelog");
+  return knex.schema.dropTable("travelog");
 };
