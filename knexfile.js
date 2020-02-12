@@ -1,22 +1,19 @@
-const dotenv = require("dotenv");
-dotenv.config();
+const db = require("./config");
 
 module.exports = {
-  // development: {
-  client: "pg",
-  connection:
-    process.env.DB_URL ||
-    `postgres://${process.env.USER}@127.0.0.1:5432/mvp_solo_project`,
-  pool: {
-    min: 2,
-    max: 10
-  },
-  migrations: {
-    tableName: "knex_migrations",
-    directory: "./migrations"
-  },
-  seeds: {
-    directory: "./seeds"
+  development: {
+    client: "pg",
+    connection: db.connection,
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: "knex_migrations",
+      directory: "./migrations"
+    },
+    seeds: {
+      directory: "./seeds"
+    }
   }
-  // },
 };

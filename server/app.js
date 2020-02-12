@@ -1,21 +1,14 @@
-const dotenv = require("dotenv");
-dotenv.config();
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 // const db = require("./index.js");
-const db = require("../database/db.js");
+const db = require("./config");
 const bodyParser = require("body-parser");
-const Knex = require("knex");
+// const Knex = require("knex");
 
 const app = express();
 const router = express.Router();
-
-//objection setup
-const knexfile = require("../knexfile");
-const knex = Knex(knexfile[process.env.NODE_ENV]);
-Model.knex(knex);
 
 app.use(bodyParser.json());
 

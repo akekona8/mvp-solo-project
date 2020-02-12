@@ -1,18 +1,13 @@
 const app = require("./app");
-const config = require("../knexfile.js");
-const knex = require("knex");
+const config = require("./config");
+const db = require("knex")(config.db);
 
 const PORT = process.env.PORT || 8080;
-
-const db = knex({
-  client: "pg",
-  connection: config.connection,
-  searchPath: "public"
-});
 
 (async () => {
   try {
     console.log("Running migrations");
+    console.log(db);
     await db.migrate.latest().then(function() {
       return db.seed.run();
     });
@@ -24,5 +19,3 @@ const db = knex({
     process.exit(-1);
   }
 })();
-
-module.exports = db;
