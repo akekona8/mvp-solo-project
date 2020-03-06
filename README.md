@@ -4,7 +4,7 @@ This was created during my time as a student at Code Chrysalis.
 
 ## About this App
 
-An app to view and record memorable travel destinatinos on a map (Google Maps API).
+Drop a pin on all the places you've been to in the world, and record your favorite memories.
 
 ### Set Up
 
@@ -20,7 +20,7 @@ yarn install
 echo "create database mvp-solo-project;" | psql
 ```
 
-3. Start the server
+3. Start the server  
    Compiles and hot-reloads for development (both client and server)
 
 ```
@@ -37,6 +37,6 @@ yarn build
 
 ### Resources
 
-Vuex, Vue, Postgres, Heroku
+Vuex, Vue, Postgres, Heroku, Google Maps API
 
-link to Heroku: https://mvp-solo-akekona8.herokuapp.com/
+link to Heroku: [https://mvp-solo-akekona8.herokuapp.com/](https://mvp-solo-akekona8.herokuapp.com/)
