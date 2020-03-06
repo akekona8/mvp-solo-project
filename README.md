@@ -1,6 +1,6 @@
 # MVP Solo Project: Travelog
 
-This was created during my time as a student at Code Chrysalis.
+_This was created during my time as a student at <a href="https://www.codechrysalis.io/" target="_blank">Code Chrysalis</a>._
 
 ## About this App
 
