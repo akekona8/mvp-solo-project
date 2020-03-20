@@ -7,7 +7,6 @@ const PORT = process.env.DB_PORT || 4000;
 (async () => {
   try {
     console.log("Running migrations");
-    // console.log(db);
     await knex.migrate.latest().then(function() {
       return knex.seed.run();
     });
