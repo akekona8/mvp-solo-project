@@ -2,10 +2,8 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
-// const db = require("./index.js");
 const db = require("./config");
 const bodyParser = require("body-parser");
-// const Knex = require("knex");
 
 const app = express();
 const router = express.Router();
@@ -24,8 +22,6 @@ app.use(express.urlencoded({ extended: false }));
 
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
-// app.use(express.static("public"));
-// app.use(express.static(path.join(__dirname, "public")));
 
 router.get("/api/travelog/", async (req, res) => {
   try {
