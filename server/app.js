@@ -2,11 +2,11 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
-const db = require("./config");
+const config = require("./config");
+const knex = require("knex")(config.db);
 const bodyParser = require("body-parser");
 
 const app = express();
-const router = express.Router();
 
 app.use(bodyParser.json());
 
@@ -23,22 +23,16 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
 
-router.get("/api/travelog/", async (req, res) => {
+app.get("/api/", async (req, res) => {
   try {
     console.log("loading all data");
-    const travelog = await db.select().table("travelog");
+    const travelog = await knex.select().table("travelog");
     res.json({ travelog });
     res.sendStatus(200);
   } catch (err) {
     console.error("Error loading travelog", err);
     res.sendStatus(500);
   }
-});
-
-//api routes
-
-router.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
 });
 
 // catch 404 and forward to error handler

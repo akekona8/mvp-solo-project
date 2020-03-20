@@ -2,7 +2,7 @@ const app = require("./app");
 const config = require("./config");
 const knex = require("knex")(config.db);
 
-const PORT = process.env.DB_PORT;
+const PORT = process.env.DB_PORT || 4000;
 
 (async () => {
   try {
