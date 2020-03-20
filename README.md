@@ -37,11 +37,6 @@ yarn build
 
 ### Resources
 
-<<<<<<< HEAD
 Vue, Vuex, Google Maps API, Postgres, Axiois, Heroku
-=======
-Vuex, Vue, Postgres, Heroku, Google Maps API
-
-> > > > > > > 65d094ba5ccebf9025d91424c8283271cdea6513
 
 link to Heroku: [https://mvp-solo-akekona8.herokuapp.com/](https://mvp-solo-akekona8.herokuapp.com/)
